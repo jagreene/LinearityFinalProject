@@ -36,12 +36,14 @@ def encipher_block(block,key):
 	num_block = []
 	for i in range (len(letters)):		
 		num_block.append(alpha_dict[letters[i]])
-	key_block = [0]*len(num_block)
-	ciph_block = ['']*len(num_block)
+
+	key_block = [0]*len(num_block)	
 	for i in range (len(key)):
 		for j in range (len(key[i])):
 			key_block[i] += key[i][j] * num_block[j]	
 		key_block[i] = key_block[i]%26	
+
+	ciph_block = ['']*len(num_block)	
 	for i in range (len(key_block)):
 		ciph_block[i] = alpha_list[key_block[i]]
 	return ''.join(ciph_block)
