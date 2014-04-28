@@ -1,6 +1,7 @@
 # Simple Caesar  substitution cipher that encrypts and decrypts a given message, using modular math. 
 
 import numpy as np
+import re
 
 text = open('constitution.txt','r')
 
@@ -20,7 +21,9 @@ ciphertext = shiftVec + textVec
 
 cipherText = np.array([chr(int(x)%256) for x in ciphertext])
 
-# print ''.join(cipherText)
+cipherText = re.sub(r'\W+','',''.join(cipherText))
+
+print cipherText
 
 ciphertext -= shiftVec
 
@@ -28,4 +31,3 @@ cipherText = np.array([chr(int(x)%256) for x in ciphertext])
 
 # print ''.join(cipherText)
 
-print ord('')
