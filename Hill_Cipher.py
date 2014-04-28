@@ -4,7 +4,7 @@ import Encrypt
 import Decrypt
 
 
-plaintext = 'multiples of n'  #Your plaintext message to be encrypted (must be divisible by n)
+plaintext = 'three letters'  #Your plaintext message to be encrypted (must be divisible by n)
 n = 3                         #Size of the encryption matrix/key
 
 vals = Encrypt.Encrypt_Message(plaintext,n)

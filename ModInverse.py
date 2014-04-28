@@ -5,7 +5,7 @@ import Bezout
 
 
 def modular_inverse(m):
-	"""Takes the inverse of a matrix (modulo 26)"""
+	"""Finds the inverse of a matrix (modulo 26)"""
 
 	mat = matrix(m)
 	inv_matrix = mat.I
