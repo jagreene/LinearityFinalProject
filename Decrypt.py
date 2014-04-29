@@ -21,10 +21,14 @@ def split_ciphertext(ciphertext,n):
 def decrypt_block(block,inv_key):
 	"""Decrypts each block by multiplying it by the inverse key"""
 	letters = list(block)
+
+	print letters
 	
 	num_block = []
 	for i in range (len(letters)):		        #Converts the block to numbers
 		num_block.append(alpha_dict[letters[i]])
+
+	print num_block
 	
 	key_block = [0]*len(num_block)	
 	for i in range (len(inv_key)):
@@ -32,10 +36,14 @@ def decrypt_block(block,inv_key):
 			key_block[i] += int(round(inv_key[i][j] * num_block[j]))
 		key_block[i] = key_block[i]%26
 
+	print key_block
+
 	de_block = ['']*len(num_block)	
 	for i in range (len(key_block)):			#Converts the block to plaintext letters	
 		de_block[i] = alpha_list[key_block[i]]
 	return''.join(de_block)
+
+	print de_block
 
 
 def Decrypt_Message(ciphertext,inv_key):
