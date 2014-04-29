@@ -45,4 +45,5 @@ def determineEngBigramFreq():
 
     return freqMatrix
 
-determineEngBigramFreq()
+if __name__ == '__main__':
+    determineEngBigramFreq()
